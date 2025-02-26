@@ -15,6 +15,7 @@
             padding: 20px;
             background: linear-gradient(to bottom, #dbeafe, #e9d5ff);
             font-family: Arial, sans-serif;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
         }
 
         /* Heading styling */
@@ -96,27 +97,13 @@
         .popup::after {
             content: "";
             position: absolute;
-            bottom: -18px;
+            bottom: -18px; /* Updated tooltip positioning */
             left: 50%;
             transform: translateX(-50%);
             border-width: 10px;
             border-style: solid;
             border-color: #8B0000 transparent transparent transparent; /* Dark Red */
         }
-
-        /* Popups for each floor */
-        #popup1 { top: 20%; left: 40%; } /* Ground Floor */
-        #popup2 { top: 50%; left: 60%; } /* Ground Floor */
-        #popup3 { top: 70%; left: 30%; } /* Ground Floor */
-        #popup4 { top: 40%; left: 80%; } /* Ground Floor */
-
-        #popup5 { top: 25%; left: 50%; } /* First Floor */
-        #popup6 { top: 55%; left: 65%; } /* First Floor */
-        #popup7 { top: 80%; left: 20%; } /* First Floor */
-
-        #popup8 { top: 15%; left: 35%; } /* Second Floor */
-        #popup9 { top: 45%; left: 75%; } /* Second Floor */
-        #popup10 { top: 60%; left: 50%; } /* Second Floor */
 
         /* Responsive Design for Laptop */
         @media (min-width: 769px) {
@@ -143,22 +130,22 @@
         <!-- List on the left (for laptops) and above images (for mobile) -->
         <div class="list-container">
             <ul>
-                <li onclick="showPopup('popup1')">Ground Floor - Entrance</li>
-                <li onclick="showPopup('popup2')">Ground Floor - Reception</li>
-                <li onclick="showPopup('popup3')">Ground Floor - Security Desk</li>
-                <li onclick="showPopup('popup4')">Ground Floor - Elevators</li>
-                <li onclick="showPopup('popup5')">First Floor - Conference Room</li>
-                <li onclick="showPopup('popup6')">First Floor - Lounge</li>
-                <li onclick="showPopup('popup7')">First Floor - Pantry</li>
-                <li onclick="showPopup('popup8')">Second Floor - Office A</li>
-                <li onclick="showPopup('popup9')">Second Floor - Office B</li>
-                <li onclick="showPopup('popup10')">Second Floor - IT Room</li>
+                <li onclick="showPopup('popup1', 'image1')">Ground Floor - Entrance</li>
+                <li onclick="showPopup('popup2', 'image1')">Ground Floor - Reception</li>
+                <li onclick="showPopup('popup3', 'image1')">Ground Floor - Security Desk</li>
+                <li onclick="showPopup('popup4', 'image1')">Ground Floor - Elevators</li>
+                <li onclick="showPopup('popup5', 'image2')">First Floor - Conference Room</li>
+                <li onclick="showPopup('popup6', 'image2')">First Floor - Lounge</li>
+                <li onclick="showPopup('popup7', 'image2')">First Floor - Pantry</li>
+                <li onclick="showPopup('popup8', 'image3')">Second Floor - Office A</li>
+                <li onclick="showPopup('popup9', 'image3')">Second Floor - Office B</li>
+                <li onclick="showPopup('popup10', 'image3')">Second Floor - IT Room</li>
             </ul>
         </div>
 
         <!-- Image Section -->
         <div class="image-section">
-            <div class="image-container">
+            <div class="image-container" id="image1">
                 <img src="img/gnd_floor.png" alt="Ground Floor">
                 <div id="popup1" class="popup">Entrance</div>
                 <div id="popup2" class="popup">Reception</div>
@@ -166,14 +153,14 @@
                 <div id="popup4" class="popup">Elevators</div>
             </div>
 
-            <div class="image-container">
+            <div class="image-container" id="image2">
                 <img src="img/first_floor.png" alt="First Floor">
                 <div id="popup5" class="popup">Conference Room</div>
                 <div id="popup6" class="popup">Lounge</div>
                 <div id="popup7" class="popup">Pantry</div>
             </div>
 
-            <div class="image-container">
+            <div class="image-container" id="image3">
                 <img src="img/second_floor.png" alt="Second Floor">
                 <div id="popup8" class="popup">Office A</div>
                 <div id="popup9" class="popup">Office B</div>
@@ -183,14 +170,18 @@
     </div>
 
     <script>
-        function showPopup(id) {
-            const popup = document.getElementById(id);
+        function showPopup(popupId, imageId) {
+            const popup = document.getElementById(popupId);
+            const imageContainer = document.getElementById(imageId);
 
             // Hide any existing popups
             document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
 
             // Show the selected popup
             popup.style.display = "block";
+
+            // Scroll smoothly to the image location
+            imageContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             // Hide after 3 seconds
             setTimeout(() => {
