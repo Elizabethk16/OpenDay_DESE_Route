@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Layout</title>
+    <title>Demo Locator</title>
     <style>
+        /* Apply gradient background */
         body {
             display: flex;
             flex-direction: column;
@@ -12,8 +13,19 @@
             justify-content: center;
             margin: 0;
             padding: 20px;
+            background: linear-gradient(to bottom, #dbeafe, #e9d5ff); /* Soft blue to light purple */
+            font-family: Arial, sans-serif;
         }
 
+        /* Heading styling */
+        h1 {
+            font-size: 32px;
+            color: #333;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* Image container */
         .image-container {
             display: flex;
             flex-direction: column;
@@ -21,25 +33,32 @@
             width: 100%;
         }
 
+        /* Image styling */
         .image-container img {
             width: 80%;
             max-width: 600px;
-            border: 3px solid black; /* Border added */
+            border: 3px solid black;
+            border-radius: 10px;
             display: block;
             margin-bottom: 20px;
-            border-radius: 10px; /* Optional rounded corners */
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
         }
 
         /* Responsive Design for Mobile */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
             .image-container img {
-                width: 95%; /* Adjust for smaller screens */
+                width: 95%;
                 max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <h1>Demo Locator</h1>
     <div class="image-container">
         <img src="img/gnd_floor.png" alt="Ground Floor">
         <img src="img/first_floor.png" alt="First Floor">
