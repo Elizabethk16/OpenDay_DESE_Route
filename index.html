@@ -25,12 +25,37 @@
             margin-bottom: 20px;
         }
 
+        /* Main container to arrange list & images */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Lists on both sides */
+        .list-container {
+            width: 20%;
+            text-align: left;
+        }
+
+        .list-container ul {
+            list-style-type: square;
+            padding: 0;
+        }
+
+        .list-container li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
         /* Image container */
         .image-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
+            width: 60%;
         }
 
         /* Image styling */
@@ -46,6 +71,27 @@
 
         /* Responsive Design for Mobile */
         @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .list-container {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .list-container ul {
+                padding: 0;
+                display: inline-block;
+                text-align: left;
+            }
+
+            .image-container {
+                width: 100%;
+            }
+
             h1 {
                 font-size: 28px;
             }
@@ -59,10 +105,33 @@
 </head>
 <body>
     <h1>Demo Locator</h1>
-    <div class="image-container">
-        <img src="img/gnd_floor.png" alt="Ground Floor">
-        <img src="img/first_floor.png" alt="First Floor">
-        <img src="img/second_floor.png" alt="Second Floor">
+    <div class="content-container">
+        <!-- Left List -->
+        <div class="list-container">
+            <ul>
+                <li>Entrance</li>
+                <li>Reception</li>
+                <li>Security Desk</li>
+                <li>Elevators</li>
+            </ul>
+        </div>
+
+        <!-- Images in the center -->
+        <div class="image-container">
+            <img src="img/gnd_floor.png" alt="Ground Floor">
+            <img src="img/first_floor.png" alt="First Floor">
+            <img src="img/second_floor.png" alt="Second Floor">
+        </div>
+
+        <!-- Right List -->
+        <div class="list-container">
+            <ul>
+                <li>Conference Hall</li>
+                <li>Workstations</li>
+                <li>Cafeteria</li>
+                <li>Restrooms</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
