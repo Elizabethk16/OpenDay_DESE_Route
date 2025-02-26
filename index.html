@@ -49,7 +49,6 @@
             cursor: pointer;
             color: #0077cc;
             transition: color 0.3s;
-            text-align: left;
         }
 
         .list-container li:hover {
@@ -104,6 +103,19 @@
             border-color: #8B0000 transparent transparent transparent;
         }
 
+        #popup1 { top: 20%; left: 40%; } /* Ground Floor */
+        #popup2 { top: 50%; left: 60%; } /* Ground Floor */
+        #popup3 { top: 70%; left: 30%; } /* Ground Floor */
+        #popup4 { top: 40%; left: 80%; } /* Ground Floor */
+
+        #popup5 { top: 25%; left: 50%; } /* First Floor */
+        #popup6 { top: 55%; left: 65%; } /* First Floor */
+        #popup7 { top: 80%; left: 20%; } /* First Floor */
+
+        #popup8 { top: 15%; left: 35%; } /* Second Floor */
+        #popup9 { top: 45%; left: 75%; } /* Second Floor */
+        #popup10 { top: 60%; left: 50%; } /* Second Floor */
+
         @media (max-width: 768px) {
             .content-container {
                 flex-direction: column;
@@ -111,7 +123,7 @@
             }
             .list-container {
                 width: 100%;
-                text-align: left;
+                text-align: center;
                 margin-bottom: 20px;
             }
             .image-section {
@@ -126,8 +138,12 @@
         <div class="list-container">
             <ul>
                 <script>
-                    const items = ["Indigenous fabrication of flexible neural implants", "Optical modality for breast cancer tumor delineation", "Cytology Scanner", "Visuovein", "HFIS: Handheld Fluorescence Imaging System", "QCM for liver cirrhosis screening", "Biosensing Platform for Oral Cancer Screening", "Gesture recognition using ToF", "Digital yoga master", "E-Security Guard", "Laser Labyrinth", "Maze runner - AI based cars", "Chess Playing Robot", "Energy Internet", "Neuromorphic Camera", "Synthetic Aperture Radar Imaging", "TinyML: Powering the Edge with ML", "Robotic Arm", "Drone", "Musical Tesla Coil", "Smart Home System", "Musical Staircase", "Solar panel tracking mechanism", "Virtual Shooting", "Drone Maneuvering with Reaction Wheel"];
-
+                    const items = ["Indigenous fabrication of flexible neural implants", "Optical modality for breast cancer tumor delineation", "Cytology Scanner", "Visuovein", "HFIS: Handheld Fluorescence Imaging System", "QCM for liver cirrhosis screening", 
+                    "Biosensing Platform for Oral Cancer Screening","EEG based Auditory Hearing Screening Systems","Polarization-based Optical system for Heart Tissue Characterization","Gesture recognition using ToF","Haptic Navigation", "Digital yoga master", "E-Waiter", "E-Security Guard","LLM empowered Indoor Air Quality Assessment ​", "Laser Labyrinth", "Maze runner - AI based cars", "Pocket Intrusion: When Your Phone Isn’t Yours Anymore", "Chess Playing Robot", "Buzz-Wire", "XY-plotter with precision servo motor drive​", "Van de graff generator", "Energy Internet", "Autonomous control for RC car", "Range extension of EV by battery Paralleling", 
+                    "Gesture Recognition using mmWave Radar", "Neuromorphic Camera", "Synthetic Aperture Radar Imaging", "Real-time audio and video inference using RAMAN TinyML Accelerator", "SQ-CARS: Scalable Quantum Control and Readout System", "TinyML: Powering the Edge with ML", "TYLOR : TDC-based Low-Overhead Synthesizable Power SCA Countermeasure on FPGAs", "ML-based Hardware for Gesture Recognition at the edge", "Side channels attack on Snow-V Algorithm", "ASIC Implementation of ambipolar gate modulation for graphene Hall-effect magnetic sensor","Highly Sensitive, Low Voltage, Multinuclear Portable NMR System development.", 
+                    "Development of Cesium Based Benchtop Atomic Clock", "Electronics for DNA Nanopore Sequencing: Detection, Amplification, and Signal Processing", "Quantum Random Number Generator using BiCMOS Logic", "Audio Processing on Edge Devices using Machine Learning Algorithms on FPGA Platform", 
+                    "Robotic Arm", "Drone", "Electric vehicle using Theo jansen mechanism", "RC Plane", "Tesla Coil", "Block Drop - The LED Matrix Challenge", "Smart Home System", "Mind the Tilt !",
+                    "Musical Staircase", "Solar panel tracking mechanism", "Relationship between Space Weather and Conditions on Earth using Maxar Satellite Imagery Analysis", "Virtual Shooting", "Drone Maneuvering with Reaction Wheel"];
                     items.forEach((item, index) => {
                         document.write(`<li onclick="showPopup('popup${index + 1}', 'image${index < 20 ? 1 : (index < 23 ? 2 : 3)}')">${item}</li>`);
                     });
