@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Locator</title>
     <style>
-        /* Apply gradient background */
         body {
             display: flex;
             flex-direction: column;
@@ -15,10 +14,9 @@
             padding: 20px;
             background: linear-gradient(to bottom, #dbeafe, #e9d5ff);
             font-family: Arial, sans-serif;
-            scroll-behavior: smooth; /* Enables smooth scrolling */
+            scroll-behavior: smooth;
         }
-
-        /* Heading styling */
+        
         h1 {
             font-size: 32px;
             color: #333;
@@ -26,31 +24,28 @@
             margin-bottom: 20px;
         }
 
-        /* Main container */
         .content-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
             width: 90%;
             max-width: 1200px;
         }
 
-        /* List container */
         .list-container {
-            width: 100%;
+            width: 30%;
             text-align: left;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
 
         .list-container ul {
             list-style-type: square;
             padding: 0;
-            display: inline-block;
+            font-size: 14px;
         }
 
         .list-container li {
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin-bottom: 5px;
             cursor: pointer;
             color: #0077cc;
             transition: color 0.3s;
@@ -60,7 +55,13 @@
             color: #0055aa;
         }
 
-        /* Image container (stacked layout) */
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+        }
+
         .image-container {
             position: relative;
             width: 80%;
@@ -69,7 +70,6 @@
             text-align: center;
         }
 
-        /* Image styling */
         .image-container img {
             width: 100%;
             border: 3px solid black;
@@ -78,48 +78,43 @@
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Popup styling */
         .popup {
             position: absolute;
-            background: #8B0000; /* Dark Red */
+            background: #8B0000;
             color: white;
             padding: 10px;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
             display: none;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
             min-width: 120px;
             z-index: 100;
         }
 
-        /* Popup pointer (triangle) */
         .popup::after {
             content: "";
             position: absolute;
-            bottom: -18px; /* Updated tooltip positioning */
+            bottom: -18px;
             left: 50%;
             transform: translateX(-50%);
             border-width: 10px;
             border-style: solid;
-            border-color: #8B0000 transparent transparent transparent; /* Dark Red */
+            border-color: #8B0000 transparent transparent transparent;
         }
 
-        /* Responsive Design for Laptop */
-        @media (min-width: 769px) {
+        @media (max-width: 768px) {
             .content-container {
-                flex-direction: row;
-                align-items: flex-start;
+                flex-direction: column;
+                align-items: center;
             }
-
             .list-container {
-                width: 20%;
-                text-align: left;
-                margin-right: 20px;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
             }
-
             .image-section {
-                width: 80%;
+                width: 100%;
             }
         }
     </style>
@@ -127,44 +122,44 @@
 <body>
     <h1>Demo Locator</h1>
     <div class="content-container">
-        <!-- List on the left (for laptops) and above images (for mobile) -->
         <div class="list-container">
             <ul>
-                <li onclick="showPopup('popup1', 'image1')">Ground Floor - Entrance</li>
-                <li onclick="showPopup('popup2', 'image1')">Ground Floor - Reception</li>
-                <li onclick="showPopup('popup3', 'image1')">Ground Floor - Security Desk</li>
-                <li onclick="showPopup('popup4', 'image1')">Ground Floor - Elevators</li>
-                <li onclick="showPopup('popup5', 'image2')">First Floor - Conference Room</li>
-                <li onclick="showPopup('popup6', 'image2')">First Floor - Lounge</li>
-                <li onclick="showPopup('popup7', 'image2')">First Floor - Pantry</li>
-                <li onclick="showPopup('popup8', 'image3')">Second Floor - Office A</li>
-                <li onclick="showPopup('popup9', 'image3')">Second Floor - Office B</li>
-                <li onclick="showPopup('popup10', 'image3')">Second Floor - IT Room</li>
+                <script>
+                    const items = ["Indigenous fabrication of flexible neural implants", "Optical modality for breast cancer tumor delineation", "Cytology Scanner", "Visuovein", "HFIS: Handheld Fluorescence Imaging System", "QCM for liver cirrhosis screening", "Biosensing Platform for Oral Cancer Screening", "Gesture recognition using ToF", "Digital yoga master", "E-Security Guard", "Laser Labyrinth", "Maze runner - AI based cars", "Chess Playing Robot", "Energy Internet", "Neuromorphic Camera", "Synthetic Aperture Radar Imaging", "TinyML: Powering the Edge with ML", "Robotic Arm", "Drone", "Musical Tesla Coil", "Smart Home System", "Musical Staircase", "Solar panel tracking mechanism", "Virtual Shooting", "Drone Maneuvering with Reaction Wheel"];
+
+                    items.forEach((item, index) => {
+                        document.write(`<li onclick="showPopup('popup${index + 1}', 'image${index < 20 ? 1 : (index < 23 ? 2 : 3)}')">${item}</li>`);
+                    });
+                </script>
             </ul>
         </div>
 
-        <!-- Image Section -->
         <div class="image-section">
             <div class="image-container" id="image1">
                 <img src="img/gnd_floor.png" alt="Ground Floor">
-                <div id="popup1" class="popup">Entrance</div>
-                <div id="popup2" class="popup">Reception</div>
-                <div id="popup3" class="popup">Security Desk</div>
-                <div id="popup4" class="popup">Elevators</div>
+                <script>
+                    for (let i = 1; i <= 20; i++) {
+                        document.write(`<div id="popup${i}" class="popup">${items[i - 1]}</div>`);
+                    }
+                </script>
             </div>
 
             <div class="image-container" id="image2">
                 <img src="img/first_floor.png" alt="First Floor">
-                <div id="popup5" class="popup">Conference Room</div>
-                <div id="popup6" class="popup">Lounge</div>
-                <div id="popup7" class="popup">Pantry</div>
+                <script>
+                    for (let i = 21; i <= 23; i++) {
+                        document.write(`<div id="popup${i}" class="popup">${items[i - 1]}</div>`);
+                    }
+                </script>
             </div>
 
             <div class="image-container" id="image3">
                 <img src="img/second_floor.png" alt="Second Floor">
-                <div id="popup8" class="popup">Office A</div>
-                <div id="popup9" class="popup">Office B</div>
-                <div id="popup10" class="popup">IT Room</div>
+                <script>
+                    for (let i = 24; i <= 25; i++) {
+                        document.write(`<div id="popup${i}" class="popup">${items[i - 1]}</div>`);
+                    }
+                </script>
             </div>
         </div>
     </div>
@@ -172,21 +167,11 @@
     <script>
         function showPopup(popupId, imageId) {
             const popup = document.getElementById(popupId);
-            const imageContainer = document.getElementById(imageId);
-
-            // Hide any existing popups
+            const image = document.getElementById(imageId);
+            
             document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-
-            // Show the selected popup
-            popup.style.display = "block";
-
-            // Scroll smoothly to the image location
-            imageContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // Hide after 3 seconds
-            setTimeout(() => {
-                popup.style.display = "none";
-            }, 3000);
+            popup.style.display = 'block';
+            image.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
 </body>
