@@ -1,7 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .image-container img {
+            width: 80%;
+            max-width: 600px;
+            border: 3px solid black; /* Border added */
+            display: block;
+            margin-bottom: 20px;
+            border-radius: 10px; /* Optional rounded corners */
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .image-container img {
+                width: 95%; /* Adjust for smaller screens */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="image-container">
+        <img src="img/gnd_floor.png" alt="Ground Floor">
+        <img src="img/first_floor.png" alt="First Floor">
+        <img src="img/second_floor.png" alt="Second Floor">
+    </div>
 </body>
 </html>
